@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:fullter_app_3/constants/colors.dart';
 import 'package:fullter_app_3/widgets/user_profile_image.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../models/room.dart';
 
@@ -79,12 +80,32 @@ class RoomCard extends StatelessWidget {
                                       fontWeight: FontWeight.w700),
                             ),
                           ),
-                          Text.rich(
-                            TextSpan(children: [
-                              TextSpan(
-                                  text:
-                                      "${room.speakers.length + room.followedBySpeakers.length + room.others.length}")
-                            ]),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text.rich(
+                              TextSpan(children: [
+                                TextSpan(
+                                    text:
+                                        "${room.speakers.length + room.followedBySpeakers.length + room.others.length} "),
+                                WidgetSpan(
+                                  child: Icon(
+                                    Iconsax.user,
+                                    size: 18,
+                                    color: KDarkColor,
+                                  ),
+                                ),
+                                TextSpan(
+                                    text:
+                                        " | ${room.speakers.length} "),
+                                WidgetSpan(
+                                  child: Icon(
+                                    Iconsax.chart,
+                                    size: 18,
+                                    color: KDarkColor,
+                                  ),
+                                ),
+                              ]),
+                            ),
                           ),
                         ],
                       ),
