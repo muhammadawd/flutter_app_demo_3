@@ -9,13 +9,14 @@ void main() {
 
 class InitApp extends StatelessWidget {
   InitApp({Key? key}) : super(key: key);
-  final ThemeData theme = ThemeData(
-    fontFamily: GoogleFonts.montserrat().fontFamily,
-    textTheme: GoogleFonts.montserratTextTheme(),
-  );
-
   @override
   Widget build(BuildContext context) {
+
+    final ThemeData theme = ThemeData(
+      fontFamily: GoogleFonts.montserrat().fontFamily,
+      textTheme: GoogleFonts.montserratTextTheme(),
+    );
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Demo App',

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fullter_app_3/data.dart';
+import 'package:fullter_app_3/widgets/room_card.dart';
+import 'package:fullter_app_3/widgets/user_profile_image.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,10 +28,27 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Iconsax.alarm),
             onPressed: () {},
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.all(9.0),
+              child: UserProfileImage(
+                imageURL: currentUser.imageURL,
+                size: 40,
+              ),
+            ),
           )
         ],
       ),
-      body: Container(),
+      body: Container(
+        child: ListView(
+          padding: EdgeInsets.all(4),
+          children: [
+            ...RoomList.map((room) => RoomCard(room:room)),
+          ],
+        ),
+      ),
     );
   }
 }
